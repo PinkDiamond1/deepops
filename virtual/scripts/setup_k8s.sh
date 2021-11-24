@@ -48,4 +48,4 @@ kubectl get nodes
 "${ROOT_DIR}/scripts/k8s/deploy_ingress.sh"
 
 # Deploy monitoring (optional)
-"${ROOT_DIR}/scripts/k8s/deploy_monitoring.sh"
+# "${ROOT_DIR}/scripts/k8s/deploy_monitoring.sh"
