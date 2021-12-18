@@ -123,36 +123,6 @@
   tags:
     - local
 
-# Install NVIDIA driver on GPU servers
-- include: nvidia-software/nvidia-driver.yml
-  tags:
-    - nvidia
-  when: deepops_gpu_operator_enabled | default('false') | bool == false
-
-# Install NVIDIA container runtime on GPU servers
-- include: container/nvidia-docker.yml
-  tags:
-    - nvidia
-  when: deepops_gpu_operator_enabled | default('false') | bool == false
-
-# Install k8s GPU feature discovery
-- include: k8s-cluster/nvidia-k8s-gpu-feature-discovery.yml
-  tags:
-    - nvidia
-  when: deepops_gpu_operator_enabled | default('false') | bool == false
-
-# Install k8s GPU device plugin
-- include: k8s-cluster/nvidia-k8s-gpu-device-plugin.yml
-  tags:
-    - nvidia
-  when: deepops_gpu_operator_enabled | default('false') | bool == false
-
-# Install NVIDIA GPU Operator
-- include: k8s-cluster/nvidia-gpu-operator.yml
-  tags:
-    - nvidia
-  when: deepops_gpu_operator_enabled | default('false') | bool == true
-
 # Manage kubectl binary
 - hosts: kube-master
   gather_facts: false
