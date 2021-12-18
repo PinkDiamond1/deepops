@@ -1,9 +1,0 @@
----
-# Kubernetes Cluster Playbook GPU Addon
-
-# Install NVIDIA container runtime on GPU servers
-- include: container/nvidia-docker.yml
-  tags:
-    - nvidia
-  when: deepops_gpu_operator_enabled | default('false') | bool == false
-
